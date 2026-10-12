@@ -1,0 +1,60 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "students": {
+      ".read": true,
+      ".write": "auth != null",
+      "$studentId": {
+        ".read": true,
+        ".write": "auth != null"
+      }
+    },
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid"
+      }
+    },
+    "examResults": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "attendance": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "dailyProgress": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "workPool": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "testTracker": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "paperCheck": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "doubtBox": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "cambridgePaper": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "calendarEntries": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    },
+    "chapterProgress": {
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+  }
+}

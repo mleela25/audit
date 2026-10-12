@@ -1,0 +1,16 @@
+{
+  "name": "shutter-cms-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "dev": "npx concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"sleep 5 && npm run open:chrome\"",
+    "open:chrome": "open -a 'Google Chrome' http://localhost:3000 || start chrome http://localhost:3000",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "open-cli": "^8.0.0"
+  }
+}

@@ -1,0 +1,102 @@
+#include <iostream>
+#include "stdio.h"
+#define MAX 50
+
+// Global variable declarations
+int globalCounter = 0;
+const float PI = 3.14159;
+
+/*
+  Function: calculateArea
+  Purpose: Multiplies radius squared by PI
+*/
+float calculateArea(float radius) {
+    float area = PI * radius * radius;
+    return area;
+}
+
+int main() {
+    // Variable declarations and initializations
+    int a = 10;
+    int b = 5;
+    double result = 0.0;
+    char grade = 'A';
+    bool isActive = true;
+    string message = "Compiler Front-End Active";
+
+    print(message);
+
+    // Relational and arithmetic expression testing
+    if (a > b && isActive) {
+        result = (a + b) * 2.5;
+        print(result);
+    } else {
+        result = a / b;
+    }
+
+    // Loop constructs
+    int i = 0;
+    for (i = 0; i < 5; i++) {
+        globalCounter += 1;
+        if (globalCounter == 3) {
+            continue;
+        }
+    }
+
+    while (a > 0) {
+        a--;
+    }
+
+    do {
+        b++;
+    } while (b < 10);
+
+    // Switch case construct
+    char choice = 'B';
+    switch (choice) {
+        case 'A': {
+            print("Choice is A");
+            break;
+        }
+        case 'B': {
+            print("Choice is B");
+            break;
+        }
+        default: {
+            print("Default choice");
+        }
+    }
+
+    // Function calls
+    float area = calculateArea(5.5);
+    print(area);
+
+    // =====================================================
+    // DELIBERATE ERRORS FOR TESTING COMPILER FRONT-END
+    // =====================================================
+    
+    // 1. Lexical Errors
+    int 12number = 100;      // Lexical Error: Invalid identifier (starts with digit)
+    char badChar = 'AB';     // Lexical Error: Invalid character literal
+    string badStr = "unclosed; // Lexical Error: Unclosed string literal
+    
+    // 2. Syntax Errors
+    int missingSemi = 40     // Syntax Error: Missing semicolon
+    if (b > a                // Syntax Error: Missing parenthesis
+        print(b);
+    }
+
+    // 3. Semantic Errors
+    int duplicateVar = 10;
+    float duplicateVar = 5.5; // Semantic Error: Duplicate declaration
+    
+    undeclaredVar = 250;     // Semantic Error: Undeclared identifier
+    
+    //int typeMismatch = ""str""; // Semantic Error: Type mismatch (string to int)
+    
+    PI = 4.13;               // Semantic Error: Constant reassignment
+    
+    int divZero = a / 0;     // Semantic Error: Division by zero
+
+    return 0;
+}
